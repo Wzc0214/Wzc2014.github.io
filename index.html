@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给薯条精灵的加油站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF69B4',
+                        secondary: '#9D65C9',
+                        accent: '#FFD700',
+                        dark: '#2A2D34',
+                        light: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .text-shadow-lg {
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            .animate-sparkle {
+                animation: sparkle 1.5s infinite alternate;
+            }
+            .animate-pulse-slow {
+                animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes sparkle {
+            0% { opacity: 0.6; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 to-purple-100 min-h-screen font-sans">
+    <!-- 背景装饰 -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -right-10 -top-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute left-1/4 top-1/3 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute -left-10 bottom-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+        
+        <!-- 星星装饰 -->
+        <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-white rounded-full shadow-lg animate-sparkle" style="animation-delay: 0s;"></div>
+        <div class="absolute top-1/2 left-1/3 w-2 h-2 bg-white rounded-full shadow-lg animate-sparkle" style="animation-delay: 0.5s;"></div>
+        <div class="absolute top-3/4 left-1/2 w-2.5 h-2.5 bg-white rounded-full shadow-lg animate-sparkle" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/3 right-1/4 w-2 h-2 bg-white rounded-full shadow-lg animate-sparkle" style="animation-delay: 1.5s;"></div>
+        <div class="absolute bottom-1/3 right-1/3 w-3 h-3 bg-white rounded-full shadow-lg animate-sparkle" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- 主内容 -->
+    <div class="relative z-10 container mx-auto px-4 py-8 md:py-16">
+        <!-- 标题区域 -->
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-primary text-shadow-lg mb-4">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">薯条精灵</span>
+                <span class="inline-block animate-pulse-slow">★</span>
+            </h1>
+            <p class="text-[clamp(1.2rem,2vw,1.8rem)] text-dark/80 max-w-2xl mx-auto">
+                你是世界上最可爱的存在，每一天都要开开心心哦！
+            </p>
+        </header>
+
+        <!-- 主要内容区 -->
+        <main class="max-w-4xl mx-auto">
+            <!-- 卡片区域 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- 左侧卡片 -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-heart text-primary text-xl"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-dark">为什么薯条精灵最可爱？</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-star text-accent mt-1 mr-2"></i>
+                            <span>因为你笑起来的样子像春天的阳光一样温暖</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-star text-accent mt-1 mr-2"></i>
+                            <span>你的可爱可以治愈一切不开心</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-star text-accent mt-1 mr-2"></i>
+                            <span>你是世界上独一无二的小精灵</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-star text-accent mt-1 mr-2"></i>
+                            <span>你的存在本身就是最美好的奇迹</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 右侧卡片 -->
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-6 transform transition-all hover:scale-105 hover:shadow-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-rocket text-secondary text-xl"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-dark">给薯条精灵的加油</h2>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-dark/80">无论遇到什么困难，你都能克服它们！</p>
+                        <p class="text-dark/80">每一天都是新的开始，你一定能创造更多的美好！</p>
+                        <p class="text-dark/80">你是最棒的，继续闪耀你的光芒吧！</p>
+                        <p class="text-dark/80">永远支持你，加油加油！</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 二次元图片区域 -->
+            <div class="relative mb-12 overflow-hidden rounded-2xl shadow-2xl">
+                <div class="aspect-[4/3] bg-gradient-to-br from-pink-200 to-purple-300 flex items-center justify-center">
+                    <img src="https://picsum.photos/seed/chips-spirit/800/600" alt="二次元风格的薯条精灵" 
+                         class="w-full h-full object-cover mix-blend-overlay opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent flex items-end p-8">
+                        <h3 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-white text-shadow">
+                            可爱无敌的薯条精灵 <span class="text-accent">★</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 互动区域 -->
+            <div class="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 mb-12">
+                <h2 class="text-2xl font-bold text-center mb-6 text-dark">给薯条精灵的留言板</h2>
+                <div class="space-y-4">
+                    <div class="p-4 bg-pink-50 rounded-xl shadow-md">
+                        <div class="flex items-center mb-2">
+                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-user text-primary"></i>
+                            </div>
+                            <h4 class="font-bold text-dark">神秘 admirer</h4>
+                        </div>
+                        <p class="text-dark/80">薯条精灵，你是世界上最可爱的人！希望你每天都能开开心心，做自己喜欢做的事情！</p>
+                    </div>
+                    
+                    <div class="p-4 bg-purple-50 rounded-xl shadow-md">
+                        <div class="flex items-center mb-2">
+                            <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center mr-3">
+                                <i class="fa-solid fa-user text-secondary"></i>
+                            </div>
+                            <h4 class="font-bold text-dark">你的忠实粉丝</h4>
+                        </div>
+                        <p class="text-dark/80">每次看到你，都能让我感到充满活力！继续保持你的可爱和热情，你是最棒的！</p>
+                    </div>
+                    
+                    <!-- 留言表单 -->
+                    <div class="mt-8">
+                        <h3 class="text-lg font-bold mb-4 text-dark">我也要留言</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-dark/80 mb-1">称呼</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all" placeholder="你的名字或昵称">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-dark/80 mb-1">留言内容</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all resize-none" placeholder="想对薯条精灵说的话..."></textarea>
+                            </div>
+                            <button type="button" class="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all flex items-center justify-center">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> 发送留言
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 互动按钮区域 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all flex items-center">
+                    <i class="fa-solid fa-heart mr-2"></i> 给薯条精灵点赞
+                </button>
+                <button class="px-8 py-3 bg-secondary hover:bg-secondary/90 text-white rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all flex items-center">
+                    <i class="fa-solid fa-gift mr-2"></i> 送薯条精灵礼物
+                </button>
+                <button class="px-8 py-3 bg-accent hover:bg-accent/90 text-dark rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all flex items-center">
+                    <i class="fa-solid fa-star mr-2"></i> 关注薯条精灵
+                </button>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="text-center py-8 text-dark/60">
+            <p>给世界上最可爱的 <span class="text-primary font-bold">薯条精灵</span> ❤️</p>
+            <p class="mt-2 text-sm">愿你的每一天都充满阳光和快乐</p>
+        </footer>
+    </div>
+
+    <!-- 悬浮装饰元素 -->
+    <div class="fixed right-6 bottom-6 z-20">
+        <div class="w-16 h-16 bg-primary rounded-full shadow-lg flex items-center justify-center cursor-pointer transform hover:scale-110 transition-all animate-float">
+            <i class="fa-solid fa-heart text-white text-2xl"></i>
+        </div>
+    </div>
+
+    <script>
+        // 点击按钮动画效果
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+    
